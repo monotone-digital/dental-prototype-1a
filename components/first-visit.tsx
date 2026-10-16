@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { ArrowUpRight, Check } from 'lucide-react';
+import { clinic } from '@/lib/clinic';
 
 const steps = [
   { title: 'Start with your story.', label: 'THE CONVERSATION', text: 'A routine checkup, a painful tooth, or a change to your smile? Share your dental concerns and the questions on your mind. You don’t need to have a treatment in mind to start.', prompt: 'What would you like to feel more confident about?' },
@@ -25,7 +26,7 @@ export function FirstVisit({ onBook }: { onBook: () => void }) {
       <div className="grid items-start gap-14 md:grid-cols-[.9fr_1.1fr] md:gap-16 lg:gap-24">
         <div className="md:sticky md:top-[124px]">
           <motion.h2 id="first-visit-title" initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .4 }} transition={{ duration: .8 }} className="font-serif text-[48px] leading-[1.06] tracking-[-1.8px] text-plum lg:text-[65px]">Good care begins<br/>with a little<br/><em className="font-normal text-olive">understanding.</em></motion.h2>
-          <p className="mt-6 max-w-[290px] text-[13px] leading-[1.9] text-ink/70">Your first visit to Hafiz Ayub Dental Care? Make space for your questions, get to know your options, and feel ready for the next step.</p>
+          <p className="mt-6 max-w-[290px] text-[13px] leading-[1.9] text-ink/70">Your first visit to {clinic.name}? Make space for your questions, get to know your options, and feel ready for the next step.</p>
           <button onClick={onBook} className="group mt-7 inline-flex items-center gap-7 rounded-full bg-plum px-6 py-4 text-[13px] text-cream shadow-[0_8px_24px_-12px_rgba(80,59,66,.45)] transition-colors hover:bg-olive">Let’s have a conversation <ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"/></button>
           <div aria-hidden="true" className="mt-12 hidden items-center gap-5 text-plum/35 md:flex"><motion.span style={{ rotate: reduced ? 0 : rotate }} className="inline-block text-[83px] leading-none">✳</motion.span><span className="text-[11px] uppercase leading-[1.9] tracking-[.16em]">Your pace.<br/>Your questions.<br/>Your next chapter.</span></div>
         </div>

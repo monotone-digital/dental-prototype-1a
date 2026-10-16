@@ -3,7 +3,7 @@ import './globals.css';
 import { clinic } from '@/lib/clinic';
 export const metadata: Metadata = {
   title: `${clinic.name} — Dental Clinic in Faisalabad`,
-  description: `Dental checkups, scaling and polishing, fillings, root canals, extractions, crowns and bridges, dentures, implants, braces, and teeth whitening at ${clinic.name}, Liaquat Town, Faisalabad. Call ${clinic.phone}.`,
+  description: `Examination and x-ray evaluation, treatment planning, pain management, fillings, root canal treatment, extractions, crowns, bridges, dentures, scaling, whitening, braces, and aligners at ${clinic.name}, Samanabad, Faisalabad. Call ${clinic.phone}.`,
   robots: { index: false, follow: false },
 };
 export default function RootLayout({children}:{children:React.ReactNode}) {
